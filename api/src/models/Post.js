@@ -1,26 +1,26 @@
 const { DataTypes } = require('sequelize');
 
-const User = (sequelize) =>
+const Post = (sequelize) =>
   sequelize.define(
-    'User',
+    'Post',
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      email: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      password: {
+      content: {
         type: DataTypes.STRING,
         allowNull: false,
       },
     },
-    { timestamps: false }
+    {
+      timestamps: false,
+    }
   );
+
+module.exports = Post;
